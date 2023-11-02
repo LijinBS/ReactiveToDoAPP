@@ -1,0 +1,74 @@
+<ng-container *ngIf="vm$ | async as vm">
+  <div
+    class="modal"
+    id="staticBackdrop"
+    data-bs-backdrop="static"
+    data-bs-keyboard="false"
+    tabindex="-1"
+    aria-labelledby="staticBackdropLabel"
+    aria-hidden="true"
+    role="dialog"
+    [ngClass]="{
+      showModal: vm.showModal
+    }"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Edit Task</h1>
+          <button
+            class="close"
+            type="button"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+            (click)="closeModal()"
+          >
+            X
+          </button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="editForm">
+            <div>
+              <label for="edit-task-name" class="font-bold">Task Name: </label>
+              <input
+                class="edit-task margin-left-20 edit-input"
+                type="text"
+                id="edit-task-name"
+                name="taskName"
+                formControlName="taskName"
+              />
+            </div>
+            <div>
+              <label for="edit-task-status" class="font-bold"
+                >Task Status:
+              </label>
+              <select
+                class="margin-left-20 edit-input"
+                name="taskStatus"
+                id="edit-task-status"
+                formControlName="taskStatus"
+              >
+                <option [ngValue]="STATUS.TODO">To Do</option>
+                <option [ngValue]="STATUS.INPROGRESS">In Progress</option>
+                <option [ngValue]="STATUS.DONE">Done</option>
+              </select>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+            (click)="closeModal()"
+          >
+            Close
+          </button>
+          <button type="button" class="btn btn-success" (click)="updateTask()">
+            Update
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>

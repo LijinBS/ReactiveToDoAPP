@@ -1,0 +1,106 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
+
+
+.d-flex {
+    display: flex;
+}
+
+.d-flex-align-center {
+    display: flex;
+    align-items: center;
+}
+
+.d-flex-align-justify-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.font-bold {
+    font-weight: bold;
+}
+
+.margin-left-20 {
+    margin-left: 20px;
+}
+
+.txt-input {
+    height: 38px;
+}
+
+.cursor-disabled {
+    cursor: not-allowed;
+}
+
+.col-width {
+    width: 30%
+}
+
+.heading {
+    font-weight: bold;
+    font-size: 40px;
+    font-family: sans-serif;
+    background: #1f2a3d;
+    color: white;
+}
+
+.input-box {
+    position: relative;
+    background: #1f2a3d;
+    width: 100%;
+
+
+    input {
+        padding: 10px;
+        border: 1px solid Orgba(255, 255, 255, 0.25);
+        border-radius: 5px;
+        outline: none;
+        color: #fff;
+        font-size: 1em;
+        background: #1f2a3d;
+        min-width: 300px;
+        padding: 21px;
+    }
+
+    span {
+        position: absolute;
+        left: 0;
+        padding: 10px;
+        pointer-events: none;
+        font-size: 1em;
+        color: rgba(255, 255, 255, 0.25);
+        text-transform: uppercase;
+    }
+
+    input:valid~span,
+    input:focus~span {
+        color: #00dfc4;
+        transform: translateX(10px) translateY(-7px);
+        font-size: 0.65em;
+        padding: 0 10px;
+        background: #1d2b3a;
+        border-left: 1px solid #00dfc4;
+        border-right: 1px solid 1#00dfc4;
+    }
+
+    .btn-save,
+    .btn-save:hover {
+        background: #00dfc4;
+        min-width: 100px;
+        color: #1d2b3a;
+        padding: 10px 12px;
+        position: absolute;
+    }
+
+    .btn.disabled {
+        background: #8fe5db;
+    }
+}
+
+.input-div {
+    background-color: #1f2a3d;
+    padding: 30px;
+}

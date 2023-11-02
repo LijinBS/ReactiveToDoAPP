@@ -1,0 +1,35 @@
+<div class="d-flex-align-justify-center font-bold heading">To Do App</div>
+<div class="d-flex-align-justify-center input-div">
+  <form [formGroup]="todoForm">
+    <div class="input-box">
+      <input class="txt-input" name="todo" formControlName="todo" />
+      <span>Enter a task here</span>
+      <button
+        type="button"
+        class="btn btn-save margin-left-20 "
+        [ngClass]="{
+          disabled: !todoForm.valid,
+          'cursor-disabled': !todoForm.valid
+        }"
+        (click)="saveTodo()"
+      >
+        Save
+      </button>
+    </div>
+  </form>
+</div>
+<app-todo-list-table></app-todo-list-table>
+
+<ng-container *ngIf="vm$ | async as vm">
+  <ngb-toast
+    class="position-fixed top-0 end-0 p-t-1"
+    *ngIf="vm.showToast"
+    [header]="vm.toastHeader"
+    [autohide]="true"
+    (hidden)="hideToast()"
+  >
+    {{ vm.toastBody }}
+  </ngb-toast>
+
+  <app-edit-task-modal></app-edit-task-modal>
+</ng-container>

@@ -1,0 +1,47 @@
+select {
+  margin-top: 20px;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+select:focus {
+  outline: none;
+}
+
+.edit-task {
+  padding: 10px 20px;
+}
+
+.showModal {
+  display: block;
+  background-color: rgb(0, 0, 0, 0.5);
+}
+
+.modal-header {
+  background-color: #1d2b3a;
+  color: white;
+}
+
+ .close {
+  color: white;
+  background-color: #1d2b3a;
+
+}
+
+.modal-body,
+.modal-footer {
+  background-color: #fff3cd;
+}
+
+.modal-dialog{
+  top: 25%;
+}
+
+.edit-input{
+  border-radius: 5px;
+  outline: none;
+  font-size: 1em;
+  min-width: 225px;
+}

@@ -1,0 +1,64 @@
+<ng-container *ngIf="vm$ | async as vm">
+  <div class="margin-100">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th class="wid-10" scope="col">#</th>
+          <th class="wid-30" scope="col" class="col-width">Item</th>
+          <th class="wid-20" scope="col">Status</th>
+          <th class="wid-40" scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let task of vm.todoList; index as i" class="table-warning">
+          <th class="wid-10" scope="row">{{ i + 1 }}</th>
+          <td class="col-width wid-30">
+            {{ task.item }}
+          </td>
+          <td class="wid-20">
+            <span
+              *ngIf="task.status === STATUS.TODO"
+              class="badge text-bg-primary"
+              >To Do</span
+            >
+            <span
+              *ngIf="task.status === STATUS.DONE"
+              class="badge text-bg-success"
+              >Completed</span
+            >
+            <span
+              *ngIf="task.status === STATUS.INPROGRESS"
+              class="badge text-bg-warning"
+              >In Progress</span
+            >
+          </td>
+          <td class="wid-40">
+            <button
+              type="button"
+              class="btn btn-danger"
+              (click)="deleteTask(i)"
+            >
+              Delete
+            </button>
+            <button
+              *ngIf="task.status !== STATUS.DONE"
+              type="button"
+              class="btn btn-success margin-left-20"
+              (click)="completeTask(i)"
+            >
+              Completed
+            </button>
+            <button
+              *ngIf="task.status !== STATUS.DONE"
+              type="button"
+              class="btn btn-info margin-left-20"
+              (click)="editTask(i)"
+            >
+              Edit
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</ng-container>
