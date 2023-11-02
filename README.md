@@ -25,3 +25,6 @@ Run `npm run test` to execute the unit tests via Jest.
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Screenshot
+![image](https://github.com/LijinBS/ReactiveToDoAPP/assets/34003511/f9fb45e9-bb0c-48c5-a1b9-df85de14bee6)
